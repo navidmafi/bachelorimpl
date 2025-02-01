@@ -1,0 +1,87 @@
+Embedding:
+
+- proj: (16*16*3) *512 +512 =768*512=393,216 +512=393,728.
+
+- positional_embedding: 1024*512=524,288.
+
+Total: 918,016.
+
+MHA per block:
+
+W_Q: 512*512 +512 =262,144 +512=262,656.
+
+W_K: same as W_Q: 262,656.
+
+W_V: same: 262,656.
+
+W_O: same:262,656.
+
+Total per MHA: 4*262,656=1,050,624.
+
+FFN per block:
+
+First Dense:512*2048 +2048=1,048,576 +2,048=1,050,624.
+
+Second Dense:2048*512 +512=1,048,576 +512=1,049,088.
+
+Total FFN:1,050,624 +1,049,088=2,099,712.
+
+LayerNorms per block: two layers. Each LayerNorm has 2*D_model=2*512=1024. So 2*1024=2048.
+
+Total per TransformerBlock: 1,050,624 +2,099,712 +2048=3,152,384.
+
+4 blocks: 3,152,384*4=12,609,536.
+
+Decoder: Dense 512→768. So 512*768 +768=393,984.
+
+Total: 918,016 +12,609,536 +393,984=13,921,536.
+
+So approximately 13.9 million parameters.
+
+Wait, but wait: when the model is initialized, are there any other parameters? For example, the loss function is defined but not part of the model. So the model's parameters are only the layers defined in the ImageInpaintingTransformer.
+
+So total parameters: ~13.9 million.
+
+But let's confirm once again.
+
+Another way: the code for each layer's parameters.
+
+PatchEmbedding:
+
+- proj: Dense(768, 512) → 768*512 +512 =393,728.
+
+- positional_embedding: (1,1024,512) → 1024*512=524,288.
+
+Total: 918,016.
+
+Each TransformerBlock:
+
+MultiHeadAttention:
+
+- W_Q, W_K, W_V, W_O: each is Dense(512,512). Each has 512*512 +512=262,656. 4*262,656=1,050,624.
+
+FFN:
+
+- Dense(512, 2048): 512*2048 +2048=1,050,624.
+
+- Dense(2048,512): 2048*512 +512=1,049,088.
+
+Total FFN: 1,050,624 +1,049,088=2,099,712.
+
+LayerNorms: 2 layers, each with 2*512=1024 parameters. 2*1024=2048.
+
+Total per block: 1,050,624 +2,099,712 +2048=3,152,384.
+
+4 blocks: 12,609,536.
+
+Decoder:
+
+- Dense(512, 768):512*768 +768=393,984.
+
+Total model parameters: 918,016 +12,609,536 +393,984=13,921,536.
+
+So 13,921,536 parameters.
+
+But let me check with actual code. For example, in Keras, when you create a model, you can call model.summary() to get the parameter count. But since the user is asking to estimate, this manual calculation should suffice.
+
+So the answer is 13,921,536 parameters, approximately 13.9 million.
