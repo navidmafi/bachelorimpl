@@ -30,9 +30,11 @@ while step < 100:
     train_loss = random.uniform(0.2, 1.0)
     point_train = (
         Point("loss_metrics")
+        .tag("run_id", str(run_id))
         .tag("phase", "train")
-        .field(f"value_{str(run_id)}", train_loss)
+        .field("value", train_loss)
         .field("step", step)
+        .field("epoch", epoch)
         .time(time.time_ns(), WritePrecision.NS)
     )
     write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=point_train)
@@ -43,9 +45,11 @@ while step < 100:
         val_loss = train_loss + random.uniform(0.01, 0.2)  # usually higher
         point_val = (
             Point("loss_metrics")
+            .tag("run_id", str(run_id))
             .tag("phase", "val")
-            .field(f"value_{str(run_id)}", val_loss)
+            .field("value", val_loss)
             .field("step", step)
+            .field("epoch", epoch)
             .time(time.time_ns(), WritePrecision.NS)
         )
         write_api.write(bucket=INFLUX_BUCKET, org=INFLUX_ORG, record=point_val)
