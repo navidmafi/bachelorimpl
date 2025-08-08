@@ -1,1 +1,4 @@
+*.zip
+portraits
+*.log
 *.keras
