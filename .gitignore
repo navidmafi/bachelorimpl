@@ -2,3 +2,4 @@
 portraits
 *.log
 *.keras
+wandb
