@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b03993a-484c-4558-980f-f5b76d5fbf83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/impl.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new/asfd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new/dbt.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new/expinflux.py" beforeDir="false" />
+    <list default="true" id="7b03993a-484c-4558-980f-f5b76d5fbf83" name="Changes" comment="feat: migrate to wandb">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new/main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/new/main.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/new/plotter.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,10 +68,23 @@
       <option name="presentableId" value="Default" />
       <updated>1733402554887</updated>
     </task>
+    <task id="LOCAL-00001" summary="feat: migrate to wandb">
+      <option name="closed" value="true" />
+      <created>1755455480946</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1755455480946</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: migrate to wandb" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: migrate to wandb" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
