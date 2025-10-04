@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b03993a-484c-4558-980f-f5b76d5fbf83" name="Changes" comment="refactor: remove pure-python MHA implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/impl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/impl.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/new/main.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/new/main.ipynb" afterDir="false" />
     </list>
@@ -56,13 +54,6 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7b03993a-484c-4558-980f-f5b76d5fbf83" name="Changes" comment="" />
