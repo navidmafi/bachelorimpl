@@ -3,3 +3,5 @@ portraits
 *.log
 *.keras
 wandb
+filelist # fully-deterministic generated
+*.lock
